@@ -127,6 +127,10 @@
         <span style="width:42px;height:42px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(255,198,63,.3);color:#a9760a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16h13l3.5 2.2a2 2 0 0 0 1 .3H22M3 16v-4l4-1 2-3 3 3 5 1c1.5.4 2 1.6 2 3v1"/><path d="M3 19h18"/></svg></span>
         <span style="font-size:14px;color:#7a5d12;"><b style="color:#6a4f08">Маленькая просьба.</b> В лофте принято переобуваться — пожалуйста, возьмите с собой сменную обувь, чтобы вам было уютно и тепло.</span>
       </div>
+      <div style="margin-top:14px;display:flex;gap:12px;align-items:flex-start;background:#eaf7ef;border:1px solid #bfe6cd;border-radius:18px;padding:15px 16px;">
+        <span style="width:42px;height:42px;border-radius:12px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(94,154,62,.18);color:#4f8a32;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v6a3 3 0 0 0 6 0V3M6 3v18M21 3c-2 0-3 2.5-3 6s1 5 3 5v6"/></svg></span>
+        <span style="font-size:14px;color:#37633f;"><b style="color:#2e5236">Будет настоящий праздник.</b> Вас ждёт накрытый праздничный стол с угощениями и, конечно, торт — приходите с аппетитом и хорошим настроением. А виш-лист ниже — лишь подсказка: дарить совсем не обязательно, нам важнее всего видеть вас рядом.</span>
+      </div>
     </section>
 
     <!-- PROGRAM -->
@@ -153,7 +157,7 @@
       <p style="font-size:15.5px;color:#5a6f6f;margin:0 0 16px;">Чтобы не дарить одно и то же, выберите подарок и нажмите «Забронировать» — он отметится для остальных гостей. Это просто подсказка, мы будем благодарны любому вашему вниманию.</p>
 
       <div style="display:flex;gap:10px;align-items:center;justify-content:space-between;background:#e9f7fc;border-radius:14px;padding:11px 16px;margin-bottom:18px;">
-        <span style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14px;color:#2b6a83;">Свободно: <span id="free-count">—</span> из <span id="total-count">26</span></span>
+        <span style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:14px;color:#2b6a83;">Свободно: <span id="free-count">—</span> из <span id="total-count">31</span></span>
         <span style="display:inline-flex;gap:12px;align-items:center;font-size:11.5px;font-weight:700;color:#7d9099;">
           <span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:50%;background:#a8d68c;"></span>свободно</span>
           <span style="display:inline-flex;align-items:center;gap:5px;"><span style="width:9px;height:9px;border-radius:50%;background:#c3ccc9;"></span>занято</span>
@@ -244,32 +248,37 @@ const CAT_COLORS = [
 ];
 
 const CATALOG = [
-  { cat: "Книги и развивашки", name: "Пазл-вкладыш «Животные» для малышей VG50662", variant: "5 элементов", price: "2 153 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9F%D0%B0%D0%B7%D0%BB-%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B%D1%88%20%C2%AB%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5%C2%BB%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%B0%D0%BB%D1%8B%D1%88%D0%B5%D0%B9%20VG50662" },
-  { cat: "Крупный подарок", name: "Детский электромобиль", variant: "белый", price: "16 609 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BC%D0%BE%D0%B1%D0%B8%D0%BB%D1%8C%20Bentley%20N1008%2012V" },
-  { cat: "Развитие и моторика", name: "Модульный ортопедический детский орто коврик для ног детей", variant: "шоколадный, карамельный, бежевый", price: "2 146 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BE%D1%80%D1%82%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BE%D1%80%D1%82%D0%BE%20%D0%BA%D0%BE%D0%B2%D1%80%D0%B8%D0%BA%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D0%BE%D0%B3%20%D0%B4%D0%B5%D1%82%D0%B5%D0%B9" },
-  { cat: "Игрушки для улицы", name: "Набор для песочницы: ведро и формочки", variant: "оранжевый, жёлтый, зелёный, синий", price: "385 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D0%B8%D1%86%D1%8B%3A%20%D0%B2%D0%B5%D0%B4%D1%80%D0%BE%20%D0%B8%20%D1%84%D0%BE%D1%80%D0%BC%D0%BE%D1%87%D0%BA%D0%B8" },
-  { cat: "Книги и развивашки", name: "Тактильная книга для детей, развивашки для малышей", variant: "", price: "799 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%A2%D0%B0%D0%BA%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%B4%D0%B5%D1%82%D0%B5%D0%B9%2C%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D0%B2%D0%B0%D1%88%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%B0%D0%BB%D1%8B%D1%88%D0%B5%D0%B9" },
-  { cat: "Творчество", name: "Тесто-пластилин для лепки для малышей, 12 цветов", variant: "красный, белый, жёлтый, синий, зелёный", price: "200 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%A2%D0%B5%D1%81%D1%82%D0%BE-%D0%BF%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D0%BB%D0%B8%D0%BD%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D0%B5%D0%BF%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%B0%D0%BB%D1%8B%D1%88%D0%B5%D0%B9%2C%2012%20%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B2" },
-  { cat: "Крупный подарок", name: "Чемодан детский на колесиках", variant: "серый, тёмно-серый, белый", price: "11 522 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%A7%D0%B5%D0%BC%D0%BE%D0%B4%D0%B0%D0%BD%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BD%D0%B0%20%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%B8%D0%BA%D0%B0%D1%85" },
-  { cat: "Конструкторы", name: "Дупло Поезд с цифрами — учимся считать 10954", variant: "23 элемента", price: "2 824 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%94%D1%83%D0%BF%D0%BB%D0%BE%20%D0%9F%D0%BE%D0%B5%D0%B7%D0%B4%20%D1%81%20%D1%86%D0%B8%D1%84%D1%80%D0%B0%D0%BC%D0%B8%20%E2%80%94%20%D1%83%D1%87%D0%B8%D0%BC%D1%81%D1%8F%20%D1%81%D1%87%D0%B8%D1%82%D0%B0%D1%82%D1%8C%2010954" },
-  { cat: "Игрушки", name: "Машинка на пульте управления большая монстр трак", variant: "синий, чёрный", price: "3 013 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BF%D1%83%D0%BB%D1%8C%D1%82%D0%B5%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%BD%D1%81%D1%82%D1%80%20%D1%82%D1%80%D0%B0%D0%BA" },
-  { cat: "Игрушки для улицы", name: "Воздушный змей детский, 1 шт.", variant: "серый", price: "267 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%92%D0%BE%D0%B7%D0%B4%D1%83%D1%88%D0%BD%D1%8B%D0%B9%20%D0%B7%D0%BC%D0%B5%D0%B9%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%2C%201%20%D1%88%D1%82." },
-  { cat: "Быт и уход", name: "Горшок детский анатомический", variant: "светло-серый", price: "815 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%93%D0%BE%D1%80%D1%88%D0%BE%D0%BA%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B0%D0%BD%D0%B0%D1%82%D0%BE%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9" },
-  { cat: "Сон", name: "Подушка детская для сна 40×60 см", variant: "40×60 см, белый/тёмно-серый/коричневый", price: "1 186 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9F%D0%BE%D0%B4%D1%83%D1%88%D0%BA%D0%B0%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B4%D0%BB%D1%8F%20%D1%81%D0%BD%D0%B0%2040%C3%9760%20%D1%81%D0%BC" },
-  { cat: "Игрушки", name: "Кукла-пупс большая 50 см, мальчик говорит", variant: "голубой", price: "2 099 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9A%D1%83%D0%BA%D0%BB%D0%B0-%D0%BF%D1%83%D0%BF%D1%81%20%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B0%D1%8F%2050%20%D1%81%D0%BC%2C%20%D0%BC%D0%B0%D0%BB%D1%8C%D1%87%D0%B8%D0%BA%20%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82" },
-  { cat: "Сон", name: "Одеяло-комфортер детское 110×140, всесезонное, тёплое", variant: "110×140 см, белый", price: "2 834 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9E%D0%B4%D0%B5%D1%8F%D0%BB%D0%BE-%D0%BA%D0%BE%D0%BC%D1%84%D0%BE%D1%80%D1%82%D0%B5%D1%80%20%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B5%20110%C3%97140%2C%20%D0%B2%D1%81%D0%B5%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%D0%BD%D0%BE%D0%B5%2C%20%D1%82%D1%91%D0%BF%D0%BB%D0%BE%D0%B5" },
-  { cat: "Игрушки для ванны", name: "Набор для ванной: игрушки для купания и игр в воде", variant: "19 шт.", price: "1 252 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9D%D0%B0%D0%B1%D0%BE%D1%80%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B9%3A%20%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%83%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B8%20%D0%B8%D0%B3%D1%80%20%D0%B2%20%D0%B2%D0%BE%D0%B4%D0%B5" },
-  { cat: "Книги и развивашки", name: "Книжки-задвижки «Чей это домик?» — книга-игрушка", variant: "", price: "399 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%9A%D0%BD%D0%B8%D0%B6%D0%BA%D0%B8-%D0%B7%D0%B0%D0%B4%D0%B2%D0%B8%D0%B6%D0%BA%D0%B8%20%C2%AB%D0%A7%D0%B5%D0%B9%20%D1%8D%D1%82%D0%BE%20%D0%B4%D0%BE%D0%BC%D0%B8%D0%BA%3F%C2%BB%20%E2%80%94%20%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%BA%D0%B0" },
-  { cat: "Быт и уход", name: "Детское молочко для тела", variant: "300 мл", price: "1 629 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%BE%D0%B5%20%D0%BC%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%BE%20%D0%B4%D0%BB%D1%8F%20%D1%82%D0%B5%D0%BB%D0%B0" },
-  { cat: "Книги и развивашки", name: "Развивающий сортер «Домики Животные», 10 фигурок и ключик", variant: "разные цвета", price: "1 446 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%A0%D0%B0%D0%B7%D0%B2%D0%B8%D0%B2%D0%B0%D1%8E%D1%89%D0%B8%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%D0%B5%D1%80%20%C2%AB%D0%94%D0%BE%D0%BC%D0%B8%D0%BA%D0%B8%20%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5%C2%BB%2C%2010%20%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%BE%D0%BA%20%D0%B8%20%D0%BA%D0%BB%D1%8E%D1%87%D0%B8%D0%BA" },
-  { cat: "Игрушки", name: "Автотрек игрушечный с машинками «Динопарк»", variant: "пыльно-оливковый, глубокий зелёный", price: "2 511 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%90%D0%B2%D1%82%D0%BE%D1%82%D1%80%D0%B5%D0%BA%20%D0%B8%D0%B3%D1%80%D1%83%D1%88%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D1%81%20%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%BA%D0%B0%D0%BC%D0%B8%20%C2%AB%D0%94%D0%B8%D0%BD%D0%BE%D0%BF%D0%B0%D1%80%D0%BA%C2%BB" },
-  { cat: "Игрушки", name: "Железная дорога с электропоездом", variant: "красный, зелёный, серый", price: "1 442 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%96%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D0%B3%D0%B0%20%D1%81%20%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D0%B5%D0%B7%D0%B4%D0%BE%D0%BC" },
-  { cat: "Фото и память", name: "Фотобумага Xiaomi, 50 листов для фотопринтера", variant: "", price: "1 876 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%A4%D0%BE%D1%82%D0%BE%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D0%B0%20Xiaomi%2C%2050%20%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%B2%20%D0%B4%D0%BB%D1%8F%20%D1%84%D0%BE%D1%82%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B0" },
-  { cat: "Фото и память", name: "Фотопринтер Xiaomi мини, цветной портативный для печати", variant: "белый", price: "4 967 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%A4%D0%BE%D1%82%D0%BE%D0%BF%D1%80%D0%B8%D0%BD%D1%82%D0%B5%D1%80%20Xiaomi%20%D0%BC%D0%B8%D0%BD%D0%B8%2C%20%D1%86%D0%B2%D0%B5%D1%82%D0%BD%D0%BE%D0%B9%20%D0%BF%D0%BE%D1%80%D1%82%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%B5%D1%87%D0%B0%D1%82%D0%B8" },
-  { cat: "Крупный подарок", name: "Башня помощника Монтессори, табурет-стремянка", variant: "белый, чёрный матовый", price: "6 420 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%91%D0%B0%D1%88%D0%BD%D1%8F%20%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%9C%D0%BE%D0%BD%D1%82%D0%B5%D1%81%D1%81%D0%BE%D1%80%D0%B8%2C%20%D1%82%D0%B0%D0%B1%D1%83%D1%80%D0%B5%D1%82-%D1%81%D1%82%D1%80%D0%B5%D0%BC%D1%8F%D0%BD%D0%BA%D0%B0" },
-  { cat: "Книги и развивашки", name: "Детский визуальный таймер с картинками «Животные»", variant: "голубой", price: "1 274 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B2%D0%B8%D0%B7%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%82%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%20%D1%81%20%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B0%D0%BC%D0%B8%20%C2%AB%D0%96%D0%B8%D0%B2%D0%BE%D1%82%D0%BD%D1%8B%D0%B5%C2%BB" },
-  { cat: "Аксессуары", name: "Детские солнцезащитные очки Navigator 0–2 с мягким чехлом", variant: "синий", price: "2 744 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B5%20%D1%81%D0%BE%D0%BB%D0%BD%D1%86%D0%B5%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%BD%D1%8B%D0%B5%20%D0%BE%D1%87%D0%BA%D0%B8%20Navigator%200%E2%80%932%20%D1%81%20%D0%BC%D1%8F%D0%B3%D0%BA%D0%B8%D0%BC%20%D1%87%D0%B5%D1%85%D0%BB%D0%BE%D0%BC" },
-  { cat: "Транспорт", name: "Детский беговел-трансформер 3 в 1 Stepni, велосипед", variant: "белый", price: "4 149 ₽", link: "https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%94%D0%B5%D1%82%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B1%D0%B5%D0%B3%D0%BE%D0%B2%D0%B5%D0%BB-%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D1%80%203%20%D0%B2%201%20Stepni%2C%20%D0%B2%D0%B5%D0%BB%D0%BE%D1%81%D0%B8%D0%BF%D0%B5%D0%B4" }
+  { name: "Электромобиль детский с пультом (самостоятельное управление ребёнком и управление с пульта)", variant: "", link: "" },
+  { name: "Машинка на пульте управления", variant: "", link: "" },
+  { name: "Железная дорога с электропоездом", variant: "", link: "" },
+  { name: "Воздушный змей детский", variant: "", link: "" },
+  { name: "Конструктор детский Лего Дупло", variant: "", link: "" },
+  { name: "Автотрек игрушечный", variant: "", link: "" },
+  { name: "Фотопринтер Xiaomi мини цветной портативный для печати", variant: "", link: "" },
+  { name: "Фотобумага Xiaomi 50 листов для фотопринтера", variant: "", link: "" },
+  { name: "Подушка детская для сна 40×60 см", variant: "", link: "" },
+  { name: "Матрас Leokid в коляску Classic 3D, дышащий", variant: "", link: "" },
+  { name: "Набор для песочницы: ведро и формочки", variant: "", link: "" },
+  { name: "Детский визуальный таймер с картинками «Животные»", variant: "", link: "" },
+  { name: "Башня помощника Монтессори, табурет-стремянка, с доской для рисования", variant: "белый, чёрный матовый", link: "" },
+  { name: "Детский беговел-трансформер 3 в 1 Junion", variant: "белый/красный/зеленый", link: "" },
+  { name: "Детские солнцезащитные очки Navigator 0–2 с мягким чехлом", variant: "синий/голубой/черный", link: "" },
+  { name: "Горшок детский анатомический", variant: "пастельные тона, без звука и картинок", link: "" },
+  { name: "Детское автокресло 9–36 кг", variant: "чёрный/серый", link: "" },
+  { name: "Развивающий сортер «Домики Животные», 10 фигурок и ключик", variant: "", link: "https://www.wildberries.ru/catalog/281423516/detail.aspx" },
+  { name: "Детское молочко для тела Mustela 300 мл", variant: "300 мл", link: "https://www.wildberries.ru/catalog/221228127/detail.aspx" },
+  { name: "Книжки-задвижки «Чей это домик?» — книга-игрушка", variant: "", link: "https://www.wildberries.ru/catalog/837141896/detail.aspx" },
+  { name: "Набор для ванной: игрушки для купания и игр в воде", variant: "19 шт.", link: "https://www.wildberries.ru/catalog/789481593/detail.aspx?size=1166943228" },
+  { name: "Кукла говорящая, большая, пупс 50 см, мальчик", variant: "голубой", link: "https://www.wildberries.ru/catalog/187489372/detail.aspx" },
+  { name: "Одеяло-комфортер детское 110×140, всесезонное, тёплое", variant: "110×140 см, белый", link: "https://www.wildberries.ru/catalog/494125254/detail.aspx" },
+  { name: "Модульный ортопедический детский орто коврик для ног детей", variant: "шоколадный, карамельный, бежевый", link: "https://www.wildberries.ru/catalog/66810844/detail.aspx" },
+  { name: "Тактильная книга для детей, развивашки для малышей", variant: "", link: "https://www.wildberries.ru/catalog/145214559/detail.aspx?size=244763710" },
+  { name: "Тесто-пластилин для лепки для малышей, 12 цветов", variant: "красный, белый, жёлтый, синий, зелёный", link: "" },
+  { name: "Чемодан детский на колесиках", variant: "серый, тёмно-серый, белый", link: "https://www.wildberries.ru/catalog/986254979/detail.aspx" },
+  { name: "Пазл-вкладыш «Животные» для малышей VG50662", variant: "", link: "https://www.wildberries.ru/catalog/183488141/detail.aspx" },
+  { name: "Конструктор детский «Робот», крупный, с музыкой, 44 детали", variant: "44 элемента, бежевый", link: "https://www.wildberries.ru/catalog/729306504/detail.aspx?size=1030273634" },
+  { name: "Брюки трикотажные, штанишки", variant: "голубой/мятный, размер 80", link: "https://www.wildberries.ru/catalog/171066009/detail.aspx?size=283967557" },
+  { name: "Брюки трикотажные, штанишки", variant: "коричневый/кофе, размер 86", link: "https://www.wildberries.ru/catalog/171065730/detail.aspx?size=283967169" }
 ];
 
 /* ============================================================================
@@ -408,7 +417,7 @@ function giftCardHTML(item, i) {
       </span>
       <div style="flex:1;min-width:0;">
         <div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap;">
-          <span style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:${catColor};background:${catBg};padding:3px 9px;border-radius:999px;">${esc(item.cat || "Подарок")}</span>
+          ${item.cat ? `<span style="font-family:'Fredoka',sans-serif;font-weight:600;font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:${catColor};background:${catBg};padding:3px 9px;border-radius:999px;">${esc(item.cat)}</span>` : ""}
           ${bookedTag}
         </div>
         <div style="font-family:'Fredoka',sans-serif;font-weight:500;font-size:15.5px;line-height:1.25;color:#2c4a4f;margin-top:6px;text-decoration:${strike};opacity:${nameOpacity};">${esc(item.name)}</div>
